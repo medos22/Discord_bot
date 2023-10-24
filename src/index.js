@@ -17,7 +17,7 @@ client.on('messageCreate', (msg)=>{
         return;
     }
     if(msg.content==='hello'){
-        msg.reply('hello');
+        msg.reply('suck my shaft');
     }
 })
-client.login(process.env.token);
+client.login(); 
