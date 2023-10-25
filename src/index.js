@@ -20,4 +20,11 @@ client.on('messageCreate', (msg)=>{
         msg.reply('suck my shaft');
     }
 })
-client.login(); 
+client.on('interactionCreate',(interaction)=>{
+    if(!interaction.isChatInputCommand()) return;
+    if(interaction.commandName==='ping'){
+        interaction.reply('https://discord.com/developers/active-developer');
+    }
+})
+
+client.login(process.env.token); 
