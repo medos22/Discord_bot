@@ -1,6 +1,9 @@
 require('dotenv').config();
-const { Client, IntentsBitField, Message } = require('discord.js');
+require ("random.js");
 
+const { Client, IntentsBitField, Message } = require('discord.js');
+const { randomInt } = require('random.js');
+var rand = (Math.random() * 3) | 0;
 const client = new Client({
     intents:[
         IntentsBitField.Flags.Guilds,
@@ -9,6 +12,7 @@ const client = new Client({
         IntentsBitField.Flags.MessageContent,
     ]
 });
+ const cyber = ['fuck you cyber','suck my dick','cyber\'s ass','cum is cyber'];
 client.on('ready',(c)=>{
     console.log(`${c.user.tag} is online.`)
 });
@@ -18,6 +22,10 @@ client.on('messageCreate', (msg)=>{
     }
     if(msg.content==='hello'){
         msg.reply('suck my shaft');
+    }
+    if(msg.author.username==='medos._.'){
+         
+        msg.reply(cyber[rand]);
     }
 })
 client.on('interactionCreate',(interaction)=>{
