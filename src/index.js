@@ -55,7 +55,7 @@ client.on('messageCreate', (msg)=>{
     if(msg.content==='hello'){
         msg.reply('suck my shaft');
     }
-    if(msg.author.username==='medos._.'){
+    if(msg.author.username==='joyishboola'){
          
         msg.reply(cyber[`Random Number ${i + 1}: ${randomNumber}`]);
     }
