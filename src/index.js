@@ -3,7 +3,8 @@ require ("random.js");
 
 const { Client, IntentsBitField, Message } = require('discord.js');
 const { randomInt } = require('random.js');
-var rand = (Math.random() * 3) | 0;
+
+
 const client = new Client({
     intents:[
         IntentsBitField.Flags.Guilds,
@@ -12,10 +13,41 @@ const client = new Client({
         IntentsBitField.Flags.MessageContent,
     ]
 });
- const cyber = ['fuck you cyber','suck my dick','cyber\'s ass','cum is cyber'];
+
+
 client.on('ready',(c)=>{
     console.log(`${c.user.tag} is online.`)
 });
+const crypto = require('crypto');
+
+function getRandomNumberBetween0And5() {
+  const timestamp = Date.now();
+  const seed = timestamp % 1000;
+  
+  const randomBytes = crypto.randomBytes(4); // Generate 4 random bytes
+  const randomSeed = parseInt(randomBytes.toString('hex'), 16);
+  
+  const combinedSeed = seed + randomSeed;
+  const randomNumber = (combinedSeed % 6);
+  return randomNumber;
+}
+
+const numIterations = 10; // Change this to the number of iterations you need
+for (let i = 0; i < numIterations; i++) {
+  const randomNumber = getRandomNumberBetween0And5();
+  console.log(`Random Number ${i + 1}: ${randomNumber}`);
+}
+
+
+    const cyber = ['fuck you cyber', 'suck my dick', 'cyber\'s ass', 'cum is cyber'];
+  
+
+  
+
+
+  
+
+  
 client.on('messageCreate', (msg)=>{
     if(msg.author.bot){
         return;
@@ -25,7 +57,7 @@ client.on('messageCreate', (msg)=>{
     }
     if(msg.author.username==='medos._.'){
          
-        msg.reply(cyber[rand]);
+        msg.reply(cyber[`Random Number ${i + 1}: ${randomNumber}`]);
     }
 })
 client.on('interactionCreate',(interaction)=>{
