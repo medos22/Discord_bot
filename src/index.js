@@ -36,11 +36,11 @@ client.on('messageCreate', (msg)=>{
     if(msg.content==='hello'){
         msg.reply('suck my shaft');
     }
-    if(msg.author.username==='medos._.'){
+    if(msg.author.username==='joyishboola'){
 
         // shuffleArray(cyber); chat gbt
         
-        msg.reply(randomarray()),1000
+        msg.reply(randomarray())
         
         
     }
